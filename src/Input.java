@@ -9,7 +9,7 @@ public class Input {
 		String employeeId;
 		String employeeName;
 		int salary;
-		double sales;
+		double sales = 0;
 		Scanner in = new Scanner(System.in);
 		System.out.print("Enter your ID : ");
 		employeeId = in.nextLine();
@@ -17,7 +17,7 @@ public class Input {
 		employeeName = in.nextLine();
 		System.out.print("Enter your salary : ");
 		salary = in.nextInt();
-		Calculate c = new Calculate(employeeId, employeeName, salary);
+		Calculate c = new Calculate(employeeId, employeeName, salary, sales);
 		int date = today.getDayOfMonth();
 		Calendar cal = Calendar.getInstance();
 		int lastDateOfMonth = cal.getActualMaximum(Calendar.DATE);
@@ -27,15 +27,16 @@ public class Input {
 			c.setSales(sales);
 			lateDate = true;
 		}
-		toString(employeeId, employeeName, salary);
+		toString(employeeId, employeeName, salary, sales);
 		in.close();
 	}
 
-	public String toString(String employeeId, String employeeName, int salary){
-		Calculate c = new Calculate(employeeId, employeeName, salary);
+	public String toString(String employeeId, String employeeName, int salary, double sales){
+		Calculate c = new Calculate(employeeId, employeeName, salary, sales);
 		String employee = c.toString();
 		if(lateDate == true) {
 			employee = employee + " netSalary : " + c.calNetSalary();
+			
 		}
 		System.out.println(employee);
 		return employee;
