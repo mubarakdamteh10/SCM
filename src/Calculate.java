@@ -3,16 +3,17 @@ public class Calculate {
     private String employeeId;
     private String employeeName;
     private int salary;
-    private Double sales;
+    private double sales;
     
     public Calculate(){
 
     }
 
-    public Calculate(String employeeId, String employeeName, int salary){
+    public Calculate(String employeeId, String employeeName, int salary, double sales){
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.salary = salary;
+        this.sales = sales;
     }
 
     public String getEmployeeId(){
@@ -33,10 +34,10 @@ public class Calculate {
     
     public double calNetSalary(){
         double netSalary = 0.00;
-        if(this.salary <= 50000){
+        if(this.sales >= 1 && this.sales <= 50000){
             netSalary = salary * 1.05;
-        } else {
-            netSalary = salary *1.10;
+        } else if(this.sales > 50000) {
+            netSalary = salary * 1.10;
         }
         return netSalary;
     }
