@@ -15,13 +15,8 @@ public class Input {
 		employeeId = in.nextLine();
 		System.out.print("Enter your Name : ");
 		employeeName = in.nextLine();
-		do{
-			System.out.print("Enter your salary : ");
-			salary = in.nextInt();
-			if(salary < 0){
-				System.out.println("Invalid salary, Please try again.");
-			}
-		}while(salary < 0);
+		System.out.print("Enter your salary : ");
+		salary = in.nextInt();
 		Calculate c = new Calculate(employeeId, employeeName, salary);
 		int date = today.getDayOfMonth();
 		Calendar cal = Calendar.getInstance();
@@ -32,12 +27,11 @@ public class Input {
 			c.setSales(sales);
 			lateDate = true;
 		}
-		sales = c.calNetSalary();
-		toString(employeeId, employeeName, salary, sales);
+		toString(employeeId, employeeName, salary);
 		in.close();
 	}
 
-	public String toString(String employeeId, String employeeName, int salary, double sales){
+	public String toString(String employeeId, String employeeName, int salary){
 		Calculate c = new Calculate(employeeId, employeeName, salary);
 		String employee = c.toString();
 		if(lateDate == true) {
