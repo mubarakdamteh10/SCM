@@ -21,7 +21,6 @@ public class Input {
 		int date = today.getDayOfMonth();
 		Calendar cal = Calendar.getInstance();
 		int lastDateOfMonth = cal.getActualMaximum(Calendar.DATE);
-		date = 30;
 		if(date == lastDateOfMonth){
 			System.out.print("Enter your sales : ");
 			sales = in.nextDouble();
@@ -36,7 +35,12 @@ public class Input {
 		Calculate c = new Calculate(employeeId, employeeName, salary, sales);
 		String employee = c.toString();
 		if(lastDate == true) {
-			employee = employee + " netSalary : " + c.calNetSalary();
+			double netSalary = c.calNetSalary();
+			if(netSalary < 12000){
+				double mixSalary = 12000 - netSalary;
+				netSalary += mixSalary;
+			}
+			employee = employee + " netSalary : " + netSalary;
 		}
 		System.out.println(employee);
 		return employee;
