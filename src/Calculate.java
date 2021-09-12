@@ -35,16 +35,16 @@ public class Calculate {
     public double calNetSalary(){
         double netSalary = 0.00;
         if(this.salary <= 10000){
-            if(this.sales <= 50000 && this.sales >= 1){
-                netSalary = this.salary * 1.05;
-            } else {
-                netSalary = this.salary * 1.10;
+            if(this.sales >= 1 && this.sales <= 50000){
+                netSalary = this.salary + (this.sales * 0.05);
+            } else if(this.sales > 50000){
+                netSalary = this.salary + (this.sales * 0.10);
             }
         } else {
             if(this.sales >= 1 && this.sales <= 100000){
-                netSalary = this.salary * 1.05;
-            } else {
-                netSalary = this.salary * 1.10;
+                netSalary = this.salary + (this.sales * 0.05);
+            } else if(this.sales > 100000){
+                netSalary = this.salary + (this.sales * 0.10);
             }
         }
             
