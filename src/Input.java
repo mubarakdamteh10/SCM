@@ -35,8 +35,7 @@ public class Input {
 		Calculate c = new Calculate(employeeId, employeeName, salary, sales);
 		String employee = c.toString();
 		if(lateDate == true) {
-			employee = employee + " netSalary : " + c.calNetSalary();
-			
+			employee = employee + " netSalary : " + c.calNetSalary();	
 		}
 		System.out.println(employee);
 		return employee;
