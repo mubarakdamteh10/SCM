@@ -21,7 +21,6 @@ public class Input {
 		int date = today.getDayOfMonth();
 		Calendar cal = Calendar.getInstance();
 		int lastDateOfMonth = cal.getActualMaximum(Calendar.DATE);
-		date = 30;
 		if(date == lastDateOfMonth){
 			System.out.print("Enter your sales : ");
 			sales = in.nextDouble();

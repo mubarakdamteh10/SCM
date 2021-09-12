@@ -45,6 +45,6 @@ public class Calculate {
     }
     
     public String toString(){
-        return "employeeId : " + this.employeeId + " employeeName : " + this.employeeName + " salary : " + this.salary;
+    	return "employeeName : " + this.employeeName;
     }
 }
