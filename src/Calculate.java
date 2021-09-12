@@ -1,4 +1,3 @@
-
 public class Calculate {
     private String employeeId;
     private String employeeName;
@@ -38,6 +37,9 @@ public class Calculate {
             netSalary = this.salary + (this.sales * 0.05);
         } else if (this.sales > 50000) {
             netSalary = this.salary + (this.sales * 0.10);
+            if(this.salary < 15000 && this.sales > 100000){
+                netSalary += 5000;
+            } 
         }
         return netSalary;
     }
